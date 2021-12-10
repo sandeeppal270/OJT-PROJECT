@@ -19,6 +19,14 @@ class JobController extends Controller
    public function company(){
     return view('company.index');
    }
+   public function myjob(){
+    $jobs = Job::where('user_id',auth()->user()->id)->get();
+    return view('jobs.myjob',compact('jobs'));
+   }
+   public function edit($id){
+    $jobs= Job::findOrFail($id);
+    return view('jobs.edit',compact('jobs'));
+   }
 
    public function create(){
        return view('jobs.create');
