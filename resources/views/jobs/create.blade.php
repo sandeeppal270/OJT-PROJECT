@@ -22,7 +22,7 @@
             </div>
             <div class="form-group">
             <label for="description">Description:</label>
-            <textarea name="description" class="form-control  {{$errors->has('description') ?'is-invalid' :''}}" value="{{old('description')}}"></textarea>
+            <textarea name="description" class="form-control  {{$errors->has('description') ? 'is-invalid' :''}}"> {{old('description')}} </textarea>
             @if($errors->has('description'))
             <span class="invalid-feedback" role="alert">
             <strong>{{ $errors->first('description') }}</strong>
@@ -32,9 +32,9 @@
             <div class="form-group">
             <label for="role">Roles:</label>
             <textarea name="roles" class="form-control"></textarea>
-            @if($errors->has('title'))
+            @if($errors->has('roles'))
             <span class="invalid-feedback" role="alert">
-            <strong>{{ $errors->first('title') }}</strong>
+            <strong>{{ $errors->first('roles') }}</strong>
             </span>
          @endif
             </div>
@@ -74,7 +74,7 @@
             </div>
             <div class="form-group">
             <label for="lastdate">Last date:</label>
-            <input type="date" name="last_date" class="form-control">
+            <input type="text" id="datepicker" name="last_date" class="form-control">
             </div>
             <div class="form-group">
             <button type="submit" class="btn btn-dark">Submit</button>

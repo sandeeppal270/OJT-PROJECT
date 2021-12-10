@@ -10,7 +10,14 @@
     <title>{{ config('app.name', 'laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script defer src="{{ asset('js/app.js') }}" ></script>
+    <script  src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script defer src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script>
+        $( function() {
+          $( "#datepicker" ).datepicker();
+        } );
+        </script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -21,6 +28,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/duotone.css" integrity="sha384-R3QzTxyukP03CMqKFe0ssp5wUvBPEyy9ZspCB+Y01fEjhMwcXixTyeot+S40+AjZ" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/fontawesome.css" integrity="sha384-eHoocPgXsiuZh+Yy6+7DsKAerLXyJmu2Hadh4QYyt+8v86geixVYwFqUvMU8X90l" crossorigin="anonymous"/>
     <script src="https://kit.fontawesome.com/219e880332.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
 </head>
 <body>
     <div id="app">
@@ -60,8 +68,8 @@
                         </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                @if(Auth::user()->user_type='employer')
-                                    {{-- {{Auth::user()->company->cname}} --}}
+                                @if(Auth::user()->user_type=='employer')
+                                    {{Auth::user()->company->cname}}
                                 @else
                                     {{ Auth::user()->name }}
                                 @endif
@@ -69,7 +77,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    @if(Auth::user()->user_type='employer')
+                                    @if(Auth::user()->user_type=='employer')
                                     <a class="dropdown-item" href="{{ route('company.view') }}">
                                     
                                      {{ __('Company') }}
