@@ -17,6 +17,10 @@ class Job extends Model
     public function company(){
         return $this->belongsTo('App\Models\Company');
     }
+    public function users(){
+        return $this->belongsToMany(User::class)->withTimestamps();
+    }
+
 
 
 }

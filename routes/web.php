@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -48,5 +50,6 @@ Route::post('user/avatar', [App\Http\Controllers\UserController::class, 'avatar'
 //employer view
 Route::view('employer/register','auth.employer-register')->name('employer.register');
 Route::post('employer/register', [App\Http\Controllers\EmployerRegisterController::class, 'employerRegister'])->name('emp.register');
+Route::post('/application/{id}', [App\Http\Controllers\JobController::class, 'apply'])->name('apply');
 
 

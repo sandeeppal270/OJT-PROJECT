@@ -33,7 +33,9 @@
         </div>
         <br>
         @if(Auth::check()&&Auth::user()->user_type='seeker')
-        <button class="btn btn-success" style="width:100%">Apply</button>
+        <form action="{{route('apply',[$job->id])}}" method="POST">@csrf
+        <button type="submit" class="btn btn-success" style="width:100%">Apply</button>
+        </form>
         @endif   
 
         </div>
