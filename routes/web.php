@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EmployerRegisterController;
 
 
 /*
@@ -24,6 +25,7 @@ Route::post('/jobs/create ', [App\Http\Controllers\JobController::class, 'store'
 Route::get('/jobs/{id}/edit ', [App\Http\Controllers\JobController::class, 'edit'])->name('job.edit');
 Route::get('/jobs/my-job ', [App\Http\Controllers\JobController::class, 'myjob'])->name('my.job');
 Route::post('/jobs/{id}/edit ', [App\Http\Controllers\JobController::class, 'update'])->name('job.update');
+Route::get('/jobs/applications', [App\Http\Controllers\JobController::class, 'applicant']);
 
 
 

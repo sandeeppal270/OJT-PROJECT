@@ -8,6 +8,7 @@
         <div class="card-header">Create a job</div>
         <div class="card-body">
             <form action="{{route('job.store')}}" method="POST">@csrf
+                
             <div class="form-group">
             <label for="title">Title:</label>
 
