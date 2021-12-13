@@ -83,6 +83,8 @@
                                      {{ __('Company') }}
                                  </a>
                                  <a class="dropdown-item" href="{{route('my.job')}}">MyJobs</a>
+                                 <a class="dropdown-item" href="{{route('applicant')}}">Applicants</a>
+
                                  @else
                                  <a class="dropdown-item" href="user/profile">
                                     

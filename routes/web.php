@@ -25,7 +25,9 @@ Route::post('/jobs/create ', [App\Http\Controllers\JobController::class, 'store'
 Route::get('/jobs/{id}/edit ', [App\Http\Controllers\JobController::class, 'edit'])->name('job.edit');
 Route::get('/jobs/my-job ', [App\Http\Controllers\JobController::class, 'myjob'])->name('my.job');
 Route::post('/jobs/{id}/edit ', [App\Http\Controllers\JobController::class, 'update'])->name('job.update');
-Route::get('/jobs/applications', [App\Http\Controllers\JobController::class, 'applicant']);
+Route::get('/jobs/applications', [App\Http\Controllers\JobController::class, 'applicant'])->name('applicant');
+Route::get('/jobs/alljobs', [App\Http\Controllers\JobController::class, 'alljobs'])->name('alljobs');
+
 
 
 
