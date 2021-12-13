@@ -56,7 +56,7 @@
         <tbody>
           @foreach($jobs as $job)
           <tr>
-            <td><img src="{{asset('avatar/man.jpg')}}" width="80"></td>
+            <td><img src="{{asset('uploads/logo')}}/{{$job->company->logo}}" width="80"></td>
             <td>position:{{$job->position}}
               <br>
               <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;{{$job->type}}
